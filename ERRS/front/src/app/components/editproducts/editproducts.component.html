@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <div class="card">
+        <div class="card-body">
+          <div class="fullbody">
+            <header>
+              <h1>Update Products</h1>
+            </header>
+            <div class="body">
+              <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="merchName">Product Name</label>
+                    <input type="text" id="merchName" formControlName="merchName">
+                  </div>
+    
+                  <div class="form-group">
+                    <label for="merchCategory">Category</label>
+                    <select id="merchCategory" name="merchCategory" formControlName="merchCategory">
+                      <option value="apparel">Apparel</option>
+                      <option value="footwear">Footwear</option>
+                      <option value="electronics">Electronics</option>
+                      <option value="books">Books</option>
+                      <option value="stationary">Stationary</option>
+                      <option value="sports">Sports</option>
+                    </select>
+                  </div>
+    
+                  <div class="form-group">
+                    <label for="merchManufacturer">Manufacturer</label>
+                    <input type="text" id="merchManufacturer" formControlName="merchManufacturer">
+                  </div>
+
+    
+                  <div class="form-group">
+                    <label for="quantity">Quantity Available</label>
+                    <input type="number" id="quantity" formControlName="merchQuantity">
+                  </div>
+    
+                  <div class="form-group">
+                    <label for="points">Points Required</label>
+                    <input type="number" id="points" formControlName="merchPoints">
+                  </div>
+    
+                  <div class="form-group">
+                    <label for="imageInput">Image</label>
+                    <input type="file" id="imageInput" name="imageInput" accept="image/PNG" (change)="onFileSelected($event)" formControlName="base64Image">
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="merchDescription">Description</label>
+                    <textarea id="merchDescription" formControlName="merchDescription"></textarea>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="merchRedemptionConditions">Redemption Conditions</label>
+                    <textarea id="merchRedemptionConditions" formControlName="merchRedemptionConditions"></textarea>
+                  </div>
+                </div>
+                <div class="button">
+                  <input type="submit" value="Update Product" class="button1">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+</body>
+</html>

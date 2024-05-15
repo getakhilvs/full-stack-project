@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo">
+      <img src="/assets/bytestrone-logo-white.svg" alt="Logo" class="icon">
+      <div class="line4"></div>
+    </div>
+    <img src="/assets/logo.png" class="logo2">
+    <div class="navbar-links">
+      
+      <div class="bYTE2">BYTE</div>
+      <div class="strone2">strone</div>
+      <div class="coin2">coin</div>
+    </div>
+  </div>
+  
+<div class="signup-container">
+    
+    <form class="signup-form" [formGroup]="signup">
+        <h1>New Registration</h1>
+      <div class="row">
+        <div class="column">
+          <label for="firstName">First Name:</label>
+          <input type="text" id="firstName" formControlName="firstName">
+        </div>
+        <div class="column">
+          <label for="lastName">Last Name:</label>
+          <input type="text" id="lastName" formControlName="lastName">
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="column">
+          <label for="email">Email:</label>
+          <input type="email" id="email" formControlName="email">
+
+        </div>
+        <div class="column">
+          <label for="age">Age:</label>
+          <input type="number" id="age" formControlName="age">
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="column">
+          <label for="designation">Designation:</label>
+          <input type="text" id="designation" formControlName="position">
+        </div>
+        <div class="column">
+          <label for="gender">Gender:</label>
+          <select id="gender" formControlName="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <label for="password">Password:</label>
+          <input type="password" id="password" formControlName="password" >
+        </div>
+        <div class="column">
+          <label for="confirmPassword">Confirm Password:</label>
+          <input type="password" id="confirmPassword" >
+          <div *ngIf="passwordMismatch" class="error-message">Password mismatch!</div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <button type="submit" (click)="onSubmit()">Sign Up</button>
+      </div>
+      <p class="small">Already Registered? <a routerLink="/login" style="color: rgb(255, 255, 255); text-decoration: none;">Login Here</a></p>
+    </form>
+  </div>
+  <div class="f1">
+    <footer>
+      <div class="footer-content">
+        <div class="footer-left">
+          <p>work.earn.redeem</p>
+        </div>
+        <div class="footer-right">
+          <a href="http://www.bytestrone.com" target="_blank">www.bytestrone.com</a>
+        </div>
+      </div>
+    </footer></div>
+  </body>

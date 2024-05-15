@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top Navigation Bar</title>
+</head>
+<body>
+
+<div class="top-navbar">
+    <div class="logo">
+        <img src="/assets/bytestrone-logo-white.svg" alt="Logo" class="icon">
+        <div class="line4"></div>
+      </div>
+      <img src="/assets/logo.png" class="logo2">
+      <div class="navbar-links">
+        
+        <div class="bYTE2">BYTE</div>
+        <div class="strone2">strone</div>
+        <div class="coin2">coin</div>
+      
+      <div class="nav-buttons">
+        <button class="curve-button" 
+                    (mouseover)="showTextOnHover('Dashboard')" 
+                    (mouseleave)="hideTextOnLeave('Dashboard')" (click)="toggleHomeCard()">
+              <mat-icon >home</mat-icon>
+              {{ showText && currentButton === 'Dashboard' ? 'Dashboard' : '' }}
+        </button>
+        <button class="curve-button" 
+            (mouseover)="showTextOnHover('Products')" 
+            (mouseleave)="hideTextOnLeave('Products')" (click)="toggleBuyProductsCard()">
+            <mat-icon >shopping_basket</mat-icon>
+            {{ showText && currentButton === 'Products' ? 'Products' : '' }}
+        </button>
+        <button class="curve-button" 
+                    (mouseover)="showTextOnHover('History')" 
+                    (mouseleave)="hideTextOnLeave('History')" (click)="toggleHistoryCard()">
+              <mat-icon >history</mat-icon>
+              {{ showText && currentButton === 'History' ? 'History' : '' }}
+            </button>
+      </div></div>
+      <button class="curve-button"
+        (mouseover)="showTextOnHover('Logout')"
+        (mouseleave)="hideTextOnLeave('Logout')" 
+        routerLink="/login"
+        (click)="signout()"
+        [ngClass]="{ 'show-text': showText && currentButton === 'Logout' }">
+  <mat-icon>logout</mat-icon>
+  <span class="icon-text">{{ showText && currentButton === 'Logout' ? 'Logout' : '' }}</span>
+</button>
+</div>
+<div class="employeeContent" *ngIf="showEmployeeContents">
+  <div class="labels-container">
+    <span class="label">Work</span>
+    <span class="label label-center">Earn</span>
+    <span class="label label-right">Redeem</span>
+</div> 
+<div class="dashboard-text">DASHBOARD</div>
+<div class="horizontal-line"></div>
+<div class="side-panel">
+    <div class="employee-details">
+        <div class="detail-item">
+          <pre><span class="detail-label">Name             :</span><span class="detail-value">{{fname}} {{lname}}</span></pre>
+        </div>
+        <div class="detail-item">
+          <pre><span class="detail-label">Designation      :</span><span class="detail-value">{{position}}</span></pre>
+        </div>
+        <div class="detail-item">
+          <pre><span class="detail-label">Age              :</span><span class="detail-value">{{age}}</span></pre>
+        </div>
+        <div class="detail-item">
+          <pre><span class="detail-label">Gender           :</span><span class="detail-value">{{gender}}</span></pre>
+        </div>
+      </div>
+      
+      <div class="bytecoin">
+        <span class="bytecoin-label">Current </span><br>
+        <span class="bytecoin-label1">Bytecoin:</span><br><br>
+        <span class="bytecoin-value">{{totalPoints - totalDebitPoints}}</span>
+      </div>
+</div>
+
+
+<div class="additional-labels">
+    <span class="additional-label-left">Recent Activity</span>
+    <div class="horizontal-line1"></div>
+    <span class="additional-label-right">Recommendation</span>
+</div>
+<div class="content-container">
+    <table class="left-table">
+        <thead>
+            <tr>
+                <th>Number of Points</th>
+                <th>Award</th>
+                <th>Remarks</th>
+                <th>Transaction Date & Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let transaction of performanceList;let i = index">
+                <td class="column green">+{{transaction.numberofPoints}}</td>
+                <td class="column">{{transaction.award}}</td>
+                <td class="column green">{{transaction.remarks}}</td>
+                <td class="column">{{transaction.transactionDateTime | date}}</td>
+                
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="image-boxes-container" *ngFor="let chunk of chunkedProducts">
+        <div class="image-box" *ngFor="let product of chunk"><img src="data:image/png;base64,{{product.merchImagePath}}" alt="Product Image" class="product-image"></div>
+    </div>
+</div>
+</div>
+<app-employeeproducts *ngIf="showBuyProductsComponent"></app-employeeproducts>
+<app-history *ngIf="showOrdersComponent"></app-history>
+<div class="f1">
+    <footer>
+      <div class="footer-content">
+        <div class="footer-left">
+          <p>work.earn.redeem</p>
+        </div>
+        <div class="footer-right">
+          <a href="http://www.bytestrone.com" target="_blank">www.bytestrone.com</a>
+        </div>
+      </div>
+    </footer></div>
+</body>
+</html>

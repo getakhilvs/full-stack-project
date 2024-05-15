@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Add your head content here -->
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo">
+      <img src="/assets/bytestrone-logo-white.svg" alt="Logo" class="icon">
+      <div class="line4"></div>
+    </div>
+    <img src="/assets/logo.png" class="logo2">
+    <div class="navbar-links">
+      <div class="bYTE2">BYTE</div>
+      <div class="strone2">strone</div>
+      <div class="coin2">coin</div>
+    </div>
+  </div>
+  <div class="outer-container">
+    <div class="inner-container left-column">
+      <img src="/assets/logo.png" alt="Logo" class="logo1">
+      <div class="byte2"><div class="bYTE">BYTE</div>
+      <div class="byte3"><div class="strone">strone</div>
+      <div class="coin">coin</div></div></div>
+      <button class="new-registration-button" (click)="navigateToSignup()">New Registration</button>
+    </div>
+    <div class="inner-container right-column">
+      <div class="login-text">Login</div>
+      <form [formGroup]="login" method="post">
+        <label for="username" class="username">Email:</label>
+        <input type="text" id="username" name="Email" placeholder="Enter Email" formControlName="email">
+        <label for="password" class="password">Password:</label>
+        <input type="password" id="password" name="password"  placeholder="Enter Password" formControlName="password">
+        <button type="submit" (click)="onSubmit()">Login</button>
+      </form>
+    </div>
+  </div>
+  <div class="f1">
+  <footer>
+    <div class="footer-content">
+      <div class="footer-left">
+        <p>work.earn.redeem</p>
+      </div>
+      <div class="footer-right">
+        <a href="http://www.bytestrone.com" target="_blank">www.bytestrone.com</a>
+      </div>
+    </div>
+  </footer></div>
+</body>
+</html>

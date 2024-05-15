@@ -1,0 +1,436 @@
+.top-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #b8c1b8;
+    padding: 7px 15px;
+}
+
+.body {
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100vh;
+    margin: 0;
+}
+
+.root {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #fff;
+    overflow: hidden;
+    height: 100vh;
+}
+
+/* Logo styles */
+.logo {
+    display: flex;
+    position: absolute;
+    left: 41px;
+    
+    width: 180px;
+    height: 30px;
+    overflow: visible;
+    filter: drop-shadow(0px 4px 4px #00000040);
+}
+
+.logo2 {
+    width: 130px;
+    height: auto;
+    margin-left: 180px;
+}
+
+.logo1 {
+    width: 500px;
+    height: auto;
+    margin-right: 20%;
+    padding-bottom: 5%;
+}
+
+/* Bytecoin styles */
+.bYTE2,
+.strone2,
+.coin2 {
+    color: #000;
+    position: absolute;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.bYTE2 {
+    font-size: 30px;
+    font-weight: 800;
+    left: 330px;
+    top: 37px;
+    width: 372px;
+    height: 157px;
+    transform: translateX(-50%);
+}
+
+.strone2 {
+    font-size: 18px;
+    left: 410px;
+    top: 31px;
+    width: 140px;
+    height: 75px;
+    transform: translateX(-50%);
+}
+
+.coin2 {
+    font-size: 18px;
+    font-weight: 300;
+    left: 405px;
+    top: 45px;
+    width: 175px;
+    height: 62px;
+    transform: translateX(-50%);
+}
+
+/* Line styles */
+.line1,
+.line4 {
+    position: relative;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.line4 {
+    height: 5px;
+    background-color: #000000;
+    left: 24px;
+    
+}
+
+.line4::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: 0 0;
+    transform: rotate(90deg);
+    width: 30px;
+    height: 0;
+    border-bottom: solid 1px #000;
+}
+
+/* Navigation buttons styles */
+.nav-buttons {
+    display: flex;
+    justify-content: flex-start;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.sign-out-button {
+    margin-left: auto;
+    background-color: #60117a;
+    color: white;
+}
+
+.curve-button {
+    margin-left: 30px;
+    padding: 7px 15px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    background-color: #0e1083;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s cubic-bezier(0.25, 0.1, 0.25, 1),
+                transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+
+}
+.curve-button1 {
+    margin-left: 30px;
+    padding: 7px 15px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    background-color: #3d0d5b;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s cubic-bezier(0.25, 0.1, 0.25, 1),
+                transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.curve-button12 {
+    margin-left: auto;
+    padding: 7px 15px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    background-color: #3d0d5b;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s cubic-bezier(0.25, 0.1, 0.25, 1),
+                transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.curve-button12:hover,
+.curve-button1:hover,
+.curve-button:hover {
+    background-color: #7b0b0b;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(212, 14, 14, 0.7);
+}
+.curve-button12:hover::before,
+.curve-button1:hover::before,
+.curve-button:hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1)); 
+    transition: opacity 0.3s ease; 
+    pointer-events: none; 
+    z-index: -1; 
+    opacity: 0; 
+}
+
+.dashboard-text {
+    margin-left: 10px;
+    
+    font-weight: bold;
+    margin-top: 20px; /* Adjust as needed */
+  }
+
+  .horizontal-line {
+    width: 90%;
+    height: 2px;
+    margin-left: 8%;
+    background-color: #d7da0c;
+  }
+
+  .side-panel {
+    width: 98%;
+    height: 180px;
+    margin-left: 10px;
+    margin-top: 20px;
+    background-color: #4e135a;
+    border-radius: 15px 15px 15px 15px; /* Adding curved edges to the bottom corners */
+    box-shadow: 0 4px 6px rgb(151, 149, 149);
+    display: flex;
+    justify-content: space-between;
+    
+  }
+  
+  .employee-details {
+    color: #fff;
+    margin-top: 5px;
+    margin-left: 40px;
+    font-size: 20px; /* Adjust the font size as needed */
+    font-family: 'Arial', sans-serif; /* Adjust the font family as needed */
+  }
+  
+  .detail-item {
+    margin-bottom: 20px;
+  }
+  
+  .detail-label {
+    font-weight: bold;
+    margin-right: 20px;
+  }
+  
+  .bytecoin {
+    color: #fff;
+    text-align: right;
+    font-size: 18px; /* Adjust the font size as needed */
+    font-family: 'Arial', sans-serif; /* Adjust the font family as needed */
+    
+    margin-top: 50px;
+  }
+  
+  .bytecoin-label {
+    font-size: 20px;
+    margin-right: 90px;
+  }
+  .bytecoin-label1 {
+    font-weight: bold;
+    font-size: 30px;
+    margin-right: 50px;
+  }
+  .bytecoin-value{
+    font-weight: bold;
+    font-size: 30px;
+    margin-right: 50px;
+    color: #d7da0c;
+  }
+ 
+.labels-container {
+    display: flex;
+    justify-content: space-between;
+    color: #000;
+    font-family: 'Arial', sans-serif;
+    padding: 10px 20px;
+    margin-top: 20px;
+    
+}
+
+.label {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.label-center {
+    margin-left: 45%;
+    font-size: 25px;
+}
+
+.label-right {
+    margin-left: auto;
+    font-size: 25px; 
+}
+.additional-labels {
+    display: flex;
+    justify-content: space-between;
+    color: #000;
+    font-family: 'Arial', sans-serif;
+    padding: 10px 20px;
+}
+
+.additional-label-left,
+.additional-label-right {
+    font-weight: bold;
+    font-size: 20px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.horizontal-line1 {
+    background-color: #d7da0c;
+    height: 2px;
+    flex-grow: 1;
+    margin: 0 10px;
+    margin-top: 20px;
+}
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+table {
+    width: 60%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    border-radius: 10px; /* Adjust the value to control the curvature */
+    overflow: hidden; /* This is important to clip the curved corners */
+}
+
+th, td {
+    border: 1px solid #dddddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #4e135a;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.image-boxes-container {
+    display: flex;
+}
+
+.image-box {
+    width: 150px;
+    height: 200px;
+    background-color: #4e0a72; 
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+}
+
+.product-image {
+    width: 135px;
+    height: 185px;
+    border-radius: 15px;
+    
+}
+
+footer {
+    background-color: #000000;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .footer-left p {
+    margin-left: 20px;
+    text-align: start;
+
+    font-weight: bold;
+    font-family: 'Arial', sans-serif; /* Replace with your preferred font-family */
+  }
+  
+  .footer-right a {
+    margin-right: 20px;
+    text-align: end;
+
+    color: #fff;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+  .f1{
+    margin-top: 2.2%;
+  }
+  @media only screen and (max-width: 768px) {
+    .nav-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .logo {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    .curve-button {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .sign-out-button {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .content-container {
+        flex-direction: column;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    .image-boxes-container {
+        flex-direction: column;
+    }
+
+    .image-box {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .performer-container {
+        flex-direction: column;
+    }
+
+    .performer-card {
+        margin-bottom: 20px;
+    }
+}

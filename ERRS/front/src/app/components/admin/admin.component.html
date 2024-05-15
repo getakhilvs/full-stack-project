@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top Navigation Bar</title>
+</head>
+<body>
+
+<div class="top-navbar">
+    <div class="logo">
+        <img src="/assets/bytestrone-logo-white.svg" alt="Logo" class="icon">
+        <div class="line4"></div>
+      </div>
+      <img src="/assets/logo.png" class="logo2">
+      <div class="navbar-links">
+        
+        <div class="bYTE2">BYTE</div>
+        <div class="strone2">strone</div>
+        <div class="coin2">coin</div>
+      
+        <div class="nav-buttons">
+            <button class="curve-button1" 
+                    (mouseover)="showTextOnHover('Dashboard')" 
+                    (mouseleave)="hideTextOnLeave('Dashboard')" (click)="toggleAdminCard()">
+              <mat-icon >home</mat-icon>
+              {{ showText && currentButton === 'Dashboard' ? 'Dashboard' : '' }}
+            </button>
+          
+            <button class="curve-button" 
+                    (mouseover)="showTextOnHover('Add Products')" 
+                    (mouseleave)="hideTextOnLeave('Add Products')" (click)="toggleAddProductsCard()">
+              <mat-icon >add_product</mat-icon>
+              {{ showText && currentButton === 'Add Products' ? 'Add Products' : '' }}
+            </button>
+            
+            <button class="curve-button" 
+                    (mouseover)="showTextOnHover('Add Points')" 
+                    (mouseleave)="hideTextOnLeave('Add Points')" (click)="toggleAddPointsCard()">
+              <mat-icon >add_point</mat-icon>
+              {{ showText && currentButton === 'Add Points' ? 'Add Points' : '' }}
+            </button>
+
+            <button class="curve-button" 
+                    (mouseover)="showTextOnHover('Add Acheivements')" 
+                    (mouseleave)="hideTextOnLeave('Add Acheivements')" (click)="toggleAddAcheivementsCard()">
+              <mat-icon >add_achievement</mat-icon>
+              {{ showText && currentButton === 'Add Acheivements' ? 'Add Acheivements' : '' }}
+            </button>
+
+            <button class="curve-button" 
+                    (mouseover)="showTextOnHover('Employee')" 
+                    (mouseleave)="hideTextOnLeave('Employee')" (click)="toggleEmployeesCard()">
+              <mat-icon >people</mat-icon>
+              {{ showText && currentButton === 'Employee' ? 'Employee' : '' }}
+            </button>
+          
+            <button class="curve-button" 
+                    (mouseover)="showTextOnHover('Products')" 
+                    (mouseleave)="hideTextOnLeave('Products')" (click)="toggleListProductsCard()">
+              <mat-icon >shopping_basket</mat-icon>
+              {{ showText && currentButton === 'Products' ? 'Products' : '' }}
+            </button>
+        </div></div>
+
+        <button class="curve-button12"
+        (mouseover)="showTextOnHover('Activity')"
+        (mouseleave)="hideTextOnLeave('Activity')" 
+        (click)="toggleRecentActivityCard()"
+        [ngClass]="{ 'show-text': showText && currentButton === 'Activity' }">
+  <mat-icon>notifications</mat-icon>
+  <span class="icon-text"> {{ showText && currentButton === 'Activity' ? 'Activity' : '' }}</span>
+</button>
+
+<button class="curve-button1"
+        (mouseover)="showTextOnHover('Logout')"
+        (mouseleave)="hideTextOnLeave('Logout')" 
+        routerLink="/login"
+        (click)="signout()"
+        [ngClass]="{ 'show-text': showText && currentButton === 'Logout' }">
+  <mat-icon>logout</mat-icon>
+  <span class="icon-text">{{ showText && currentButton === 'Logout' ? 'Logout' : '' }}</span>
+</button>
+                
+    
+      
+</div>
+
+<div class="adminContent" *ngIf="showAdminContents">
+  <div class="labels-container">
+    <span class="label">Work</span>
+    <span class="label label-center">Earn</span>
+    <span class="label label-right">Redeem</span>
+</div> 
+<div class="dashboard-text">DASHBOARD</div>
+<div class="horizontal-line"></div>
+<div class="side-panel">
+    <div class="employee-details">
+        <div class="detail-item">
+          <pre><span class="detail-label">Name             :</span><span class="detail-value">{{fname}} {{lname}}</span></pre>
+        </div>
+        <div class="detail-item">
+          <pre><span class="detail-label">Designation      :</span><span class="detail-value">{{position}}</span></pre>
+        </div>
+        <div class="detail-item">
+          <pre><span class="detail-label">Age              :</span><span class="detail-value">{{age}}</span></pre>
+        </div>
+        <div class="detail-item">
+          <pre><span class="detail-label">Gender           :</span><span class="detail-value">{{gender}}</span></pre>
+        </div>
+      </div>
+      
+      <div class="bytecoin">
+        <span class="bytecoin-label">Current </span><br>
+        <span class="bytecoin-label1">Bytecoin:</span><br><br>
+        <span class="bytecoin-value">{{totalPoints - totalDebitPoints}}</span>
+      </div>
+</div>
+
+
+<div class="additional-labels">
+    <span class="additional-label-left">Top Performers</span>
+    <div class="horizontal-line1"></div>
+    <span class="additional-label-right">Recent Added Products</span>
+</div>
+<div class="content-container">
+    
+
+    <div class="performer-container">
+        <ng-container *ngFor="let performer of topPerformersList; let i = index">
+          <div class="performer-card" [ngClass]="{'first-place': i === 0, 'second-place': i === 1, 'third-place': i === 2}">
+            <i class="fas fa-trophy"></i>
+            <h2>{{i + 1}} Place</h2>
+            <p>
+              <span class="employeename">{{performer.employeeFirstName}} {{performer.employeeLastName}}</span>
+            </p>
+            <p class="green">Score: {{performer.employeeTotalPoints}}</p>
+          </div>
+        </ng-container>
+      </div>
+      
+
+
+    <div class="image-boxes-container" *ngFor="let chunk of chunkedProducts">
+        <div class="image-box" *ngFor="let product of chunk"><img src="data:image/png;base64,{{product.merchImagePath}}" alt="Product Image" class="product-image"></div>
+    </div>
+</div></div>
+<div>
+<app-addproduct *ngIf="showAddProductsComponent" (showProductFormChange)="showAddProductsComponent=$event;showAdminContents=!$event" ></app-addproduct>
+<app-adminproductlist *ngIf="showProductsListComponent"></app-adminproductlist>
+<app-employeelist *ngIf="showEmployeesComponent"></app-employeelist>
+<app-addpoints *ngIf="showAddPointsComponent"></app-addpoints>
+<app-recentactivity *ngIf="showRecentActivityComponent"></app-recentactivity>
+<app-addachievements *ngIf="showAchivementsComponent"></app-addachievements>
+</div>
+<div class="f1">
+    <footer>
+      <div class="footer-content">
+        <div class="footer-left">
+          <p>work.earn.redeem</p>
+        </div>
+        <div class="footer-right">
+          <a href="http://www.bytestrone.com" target="_blank">www.bytestrone.com</a>
+        </div>
+      </div>
+    </footer></div>
+</body>
+</html>

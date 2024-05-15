@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievement Form</title>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Achievement Form</h2>
+    <form [formGroup]="achievementForm" (ngSubmit)="onSubmit()">
+        <label for="achievementName">Achievement Name:</label>
+        <input type="text" id="achievementName" name="achievementName" formControlName="achievement_name" required>
+
+        <label for="achievementDescription">Achievement Description:</label>
+        <textarea id="achievementDescription" name="achievementDescription" formControlName="achievement_desc" required></textarea>
+
+        <label for="points">Points:</label>
+        <input type="number" id="points" name="points" formControlName="points" required>
+
+        <button type="submit">Submit</button>
+    </form>
+  </div>
+
+</body>
+</html>

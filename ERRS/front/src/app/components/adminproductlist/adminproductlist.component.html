@@ -1,0 +1,26 @@
+<body>
+    <div class="product-container" *ngFor="let chunk of chunkedProducts">
+      <div *ngFor="let product of chunk" class="product-card">
+        <img src="data:image/png;base64,{{product.merchImagePath}}" alt="Product Image" class="product-image">
+        <div class="product-details">
+          <div class="product-title bold">{{product.merchName}}</div>
+          <div class="product-description">
+            <mark>{{product.merchCategory}}</mark><mark class="greenmark">{{product.merchStatus}}</mark>
+          </div>
+          <div class="product-description">
+            Manufacturer: <span class="bold">{{product.merchManufacturer}}</span>
+          </div>
+          <div class="product-description">{{product.merchDescription}}</div>
+          <hr>
+          <div class="center">
+            <div class="bold">Bytes: <span class="green">{{product.merchCost}}</span></div>
+            <div class="flex">
+              <button class="button flex red" (click)="deleteProduct(product.merchId)">Delete</button>
+              <button class="button flex blue" (click)="editProduct(product)">Edit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  

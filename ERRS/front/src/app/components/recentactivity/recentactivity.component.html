@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Include your stylesheets, scripts, and other head elements here -->
+</head>
+<body>
+
+  <div class="table-container">
+    <div class="right-table">
+      <h2>Recent Debit Activity</h2>
+      <table mat-table [dataSource]="orders" class="mat-elevation-z8">
+        <ng-container matColumnDef="transactionDebitId">
+          <th mat-header-cell *matHeaderCellDef> Order ID </th>
+          <td mat-cell *matCellDef="let order">{{ order.transactionDebitId }}</td>
+        </ng-container>
+        <ng-container matColumnDef="employeeFirstName">
+          <th mat-header-cell *matHeaderCellDef> Employee Name </th>
+          <td mat-cell *matCellDef="let order">{{ order.employee.employeeFirstName }}</td>
+        </ng-container>
+        <ng-container matColumnDef="merchName">
+          <th mat-header-cell *matHeaderCellDef> Product Name </th>
+          <td mat-cell *matCellDef="let order">{{ order.product.merchName }}</td>
+        </ng-container>
+        <ng-container matColumnDef="transactionDateTime">
+          <th mat-header-cell *matHeaderCellDef> Order Placed at </th>
+          <td mat-cell *matCellDef="let order">{{ order.transactionDateTime | date}}</td>
+        </ng-container>
+        <ng-container matColumnDef="merchCost">
+          <th mat-header-cell *matHeaderCellDef> Bytes </th>
+          <td mat-cell *matCellDef="let order">{{ order.product.merchCost }}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns1;"></tr>
+      </table>
+    </div>
+
+    <div class="left-table">
+      <h2>Recent Credit Activity</h2>
+      <table mat-table [dataSource]="creditList" class="mat-elevation-z8">
+        <ng-container matColumnDef="employeeFirstName">
+          <th mat-header-cell *matHeaderCellDef> Employee Name </th>
+          <td mat-cell *matCellDef="let transaction">{{ transaction.employee.employeeFirstName }}</td>
+        </ng-container>
+        <ng-container matColumnDef="numberofPoints">
+          <th mat-header-cell *matHeaderCellDef> Number of Points </th>
+          <td mat-cell *matCellDef="let transaction">+{{ transaction.numberofPoints }}</td>
+        </ng-container>
+        <ng-container matColumnDef="award">
+          <th mat-header-cell *matHeaderCellDef> Award </th>
+          <td mat-cell *matCellDef="let transaction">{{ transaction.award }}</td>
+        </ng-container>
+        <ng-container matColumnDef="remarks">
+          <th mat-header-cell *matHeaderCellDef> Remarks </th>
+          <td mat-cell *matCellDef="let transaction" class="green">{{ transaction.remarks }}</td>
+        </ng-container>
+        <ng-container matColumnDef="transactionDateTime">
+          <th mat-header-cell *matHeaderCellDef> Transaction Date & Time </th>
+          <td mat-cell *matCellDef="let transaction">{{ transaction.transactionDateTime | date}}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Include your scripts or additional content here -->
+
+</body>
+</html>

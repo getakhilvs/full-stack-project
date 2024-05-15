@@ -1,0 +1,260 @@
+body {
+    background-image: url('/assets/Untitled-2-01.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100vh;
+    margin: 0;
+}
+
+.root {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #fff;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.logo {
+    display: flex;
+    
+    left:300px;
+}
+.logo {
+    position: absolute;
+    left: 41px;
+    top: 45px;
+    width: 199.836px;
+    height: 36.305px;
+    overflow: visible;
+    filter: drop-shadow(0px 4px 4px #00000040);
+}
+.logo2 {
+    width: 150px; 
+    height: auto;
+    margin-left:200px;
+    
+}
+.logo1 {
+    width: 500px; 
+    height: auto;
+    margin-right: 20%;
+    padding-bottom: 5%;
+    
+}
+
+.bYTE2,
+.strone2,
+.coin2 {
+    color: #000;
+    position: absolute;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.bYTE2 {
+    font-size: 40px;
+    font-weight: 800;
+    left: 400px; 
+    top: 50px;  
+    width: 372px;
+    height: 157px;
+    transform: translateX(-50%);
+}
+
+.strone2 {
+    font-size: 24px;
+    left: 500px; 
+    top: 43px;  
+    width: 140px;
+    height: 75px;
+    transform: translateX(-50%);
+}
+
+.coin2 {
+    font-size: 24px;
+    font-weight: 300;
+    left: 495px; 
+    top: 58px; 
+    width: 175px;
+    height: 62px;
+    transform: translateX(-50%);
+}
+.line1,
+.line4 {
+    position: relative;
+    max-width: 100%;
+    max-height: 100%;
+  }
+.line4 {
+    flex-grow: 1;
+    height: 5px;
+    background-color: #000000;
+    left:30px;
+    top:.5px;
+
+}
+
+.line4::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: 0 0;
+    transform: rotate(90deg);
+    width: 30px;
+    height: 0;
+    border-bottom: solid 1px #000;
+}
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .signup-form {
+    width: 800px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(rgb(88, 10, 131), rgb(154, 28, 212));  
+  }
+  
+  .row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+  
+  .column {
+    width: 48%;
+  }
+  
+  label {
+    color: #ffffff;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+}
+
+  h1{
+    color: #ffffff;
+    text-align: center;
+  }
+  
+  input,
+  select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  button {
+    width: 100%;
+    padding: 12px;
+    background-color: #e0d130;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  footer {
+    background-color: #000000;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .footer-left,
+  .footer-right {
+    flex: 1;
+  }
+  
+  .footer-left p {
+    margin-left: 20px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif; /* Replace with your preferred font-family */
+  }
+  
+  .footer-right a {
+    color: #fff;
+    text-decoration: none;
+  }
+  .f1{
+    margin-top: 2.2%;
+  } 
+  
+  @media only screen and (max-width: 768px) {
+    .logo {
+        left: 10px; /* Adjust as needed */
+    }
+
+    .logo2 {
+        margin-left: 10px; /* Adjust as needed */
+    }
+
+    .logo1 {
+        margin-right: 10px; /* Adjust as needed */
+        padding-bottom: 2%; /* Adjust as needed */
+    }
+
+    .bYTE2 {
+        left: 10px; /* Adjust as needed */
+    }
+
+    .strone2 {
+        left: 10px; /* Adjust as needed */
+    }
+
+    .coin2 {
+        left: 10px; /* Adjust as needed */
+    }
+
+    .line4 {
+        left: 10px; /* Adjust as needed */
+    }
+
+    .signup-form {
+        width: 100%; /* Adjust as needed */
+    }
+
+    .column {
+        width: 100%; /* Adjust as needed */
+    }
+
+    .footer-left p {
+        margin-left: 10px; /* Adjust as needed */
+    }
+
+    .f1 {
+        margin-top: 1%; /* Adjust as needed */
+    }
+}

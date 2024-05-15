@@ -1,0 +1,116 @@
+.table-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+  }
+  
+  .left-table,
+  .right-table {
+    width: 80%;
+    padding: 20px;
+    border: 1px solid #ddd;
+    margin: 0 0 10px 0;
+    background-color: #9c989e;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .left-table h2,
+  .right-table h2 {
+    font-size: 24px;
+    
+    margin-bottom: 15px;
+    color: #ffffff;
+  }
+  
+  .left-table {
+    order: 2;
+    
+  }
+  
+  .right-table {
+    order: 1;
+    
+  }
+  
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+  }
+  
+  .top-section-part {
+    margin: 20px;
+  }
+  
+  h1 {
+    color: #000000;
+    text-align: center;
+  }
+  
+  .mat-elevation-z8 {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    overflow-x: auto;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  
+  
+table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 5px;
+  text-align: left;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+th {
+  color: #fff;
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 5px;
+  text-align: left;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+th:hover {
+  background-color: #195492;
+}
+
+tr:hover {
+  background-color: #266dd0;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+  
+  /* Add animation to rows */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .mat-row {
+    animation: fadeIn 0.5s ease;
+  }
+  
+  td:hover {
+    background-color: #4CAF50;
+    color: white;
+    transform: scale(1.1);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  }
+  
+
+  .mat-mdc-header-row{
+    background-color: #4e135a;
+  }

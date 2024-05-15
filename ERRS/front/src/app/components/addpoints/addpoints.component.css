@@ -1,0 +1,132 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+}
+
+.card {
+    box-sizing: border-box;
+    width: 80%;
+    margin: 20px auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+.card-body {
+    padding: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 5px;
+    text-align: left;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+th {
+    color: #fff;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 5px;
+    text-align: left;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+th:hover {
+    background-color: #195492;
+}
+
+tr:hover {
+    background-color: #266dd0;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.mat-row {
+    animation: fadeIn 0.3s ease;
+}
+
+td:hover {
+    background-color: #4CAF50;
+    color: #fff;
+    transform: scale(1.02);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.button {
+    background-color: #266dd0;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+input {
+    width: 80%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:hover,
+input:focus {
+    border-color: #266dd0;
+    box-shadow: 0 0 5px rgba(38, 109, 208, 0.5);
+}
+
+.button:hover {
+    background-color: #4CAF50;
+    transform: scale(1.02);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.buttonparent {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.mat-mdc-header-row {
+    background-color: #4e135a;
+}
+
+.selected-row {
+    background-color: #52cc52; 
+    color: #fff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Montserrat', sans-serif; 
+}
+
+.selected-row:hover {
+    
+    color: #fff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.success-snackbar {
+    background-color: #4caf50; 
+    color: white;
+  }
+  
+  .error-snackbar {
+    background-color: #f44336;
+    color: white;
+  }
